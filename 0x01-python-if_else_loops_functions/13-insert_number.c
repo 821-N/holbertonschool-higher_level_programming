@@ -9,11 +9,12 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
+	listint_t *new, *prev, *curr;
+
 	if (!head)
 		return (NULL);
 
-	listint_t *new = malloc(sizeof(listint_t));
-
+	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
 	new->n = number;
@@ -27,8 +28,8 @@ listint_t *insert_node(listint_t **head, int number)
 		return (new);
 	}
 	/* Search for position */
-	listint_t *prev = *head, *curr = prev->next;
-
+	prev = *head;
+	curr = prev->next;
 	while (curr)
 	{
 		if (curr->n >= number)
