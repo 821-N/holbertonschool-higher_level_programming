@@ -11,9 +11,7 @@ if __name__ == "__main__":
     op = argv[2]
     ops = {"+": add, "-": sub, "*": mul, "/": div}
     if op in ops:
-        print("{} {} {} = {}".format(a, op, b, ops[op](a,b)))
+        print("{} {} {} = {}".format(a, op, b, ops[op](a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
-    
-    
