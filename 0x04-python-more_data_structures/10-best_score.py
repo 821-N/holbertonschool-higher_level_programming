@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-best_score = max
+def best_score(dic):
+    return max(dic, key=dic.get)
