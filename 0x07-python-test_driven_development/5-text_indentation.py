@@ -8,12 +8,6 @@ def text_indentation(text):
     """ insert 2 linebreaks after ? . : """
     if type(text) != str:
         raise TypeError("text must be a string")
-    broke = False
-    for c in text:
-        if not(c == ' ' and broke):
-            print(end=c)
-        broke = False
-        if c in ('.', '?', ':'):
-            print()
-            print()
-            broke = True
+    for dl in '?', '.', ':':
+        text = (dl+"\n\n").join(line.strip(" ") for line in text.split(dl))
+    print(end=text)
