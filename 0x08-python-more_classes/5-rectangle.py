@@ -63,4 +63,4 @@ class Rectangle:
 
     def __del__(self):
         """ print message when rectangle is deleted """
-        print("By rectangle...")  # :(
+        print("Bye rectangle...")  # :(
