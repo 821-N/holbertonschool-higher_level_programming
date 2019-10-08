@@ -62,7 +62,7 @@ class Rectangle:
         """ return rectangle drawn with #s """
         row = ""
         for x in range(self.width):
-            row += str(Rectangle.print_symbol)
+            row += str(self.print_symbol)
         return "\n".join([row]*self.height)
 
     def __repr__(self):
