@@ -1,0 +1,49 @@
+>>> Rectangle = __import__("6-rectangle").Rectangle
+>>> my_rectangle = Rectangle()
+>>> print(Rectangle.number_of_instances)
+1
+>>> print(type(my_rectangle))
+<class '6-rectangle.Rectangle'>
+
+>>> print(my_rectangle.width, my_rectangle.height)
+0 0
+>>> del my_rectangle
+Bye rectangle...
+>>> print(Rectangle.number_of_instances)
+0
+>>> my_rectangle = Rectangle(10, 4)
+>>> my_rectangle.width = 3
+>>> print(my_rectangle.width, my_rectangle.height)
+3 4
+>>> my_rectangle = Rectangle("5", 8)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+>>> my_rectangle = Rectangle(8, -1)
+Traceback (most recent call last):
+...
+ValueError: height must be >= 0
+
+>>> my_rectangle = Rectangle(2, 4)
+Bye rectangle...
+Bye rectangle...
+>>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+Area: 8 - Perimeter: 12
+>>> my_rectangle.width = 10
+>>> my_rectangle.height = 3
+>>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+Area: 30 - Perimeter: 26
+>>> my_rectangle.width = 0
+>>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+Area: 0 - Perimeter: 0
+
+>>> my_rectangle.width=3;my_rectangle.height=2
+>>> print(my_rectangle)
+###
+###
+>>> type(eval(repr(my_rectangle))) == Rectangle
+Bye rectangle...
+True
+
+>>> del my_rectangle
+Bye rectangle...
