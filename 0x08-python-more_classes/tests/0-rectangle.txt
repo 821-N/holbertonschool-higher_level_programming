@@ -1,0 +1,4 @@
+>>> Rectangle = __import__("0-rectangle").Rectangle
+>>> r = Rectangle()
+>>> print(type(r))
+<class '0-rectangle.Rectangle'>
