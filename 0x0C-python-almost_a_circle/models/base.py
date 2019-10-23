@@ -5,6 +5,8 @@
 
 
 import json
+import turtle
+import random
 
 
 class Base:
@@ -51,7 +53,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ create new from aaa """
-        new = cls(69, 420)
+        new = cls(0, 0)
         new.update(**dictionary)
         return new
 
@@ -73,3 +75,32 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    def turtle_rect(self):
+        random.seed(self.id)
+        turtle.setworldcoordinates(0,0,200,200)
+        turtle.speed(0)
+        turtle.delay(0)
+        turtle.up()
+        turtle.hideturtle()
+        turtle.goto(self.x, self.y)
+        turtle.seth(90)
+        turtle.fillcolor("#%02x%02x%02x" % (
+            random.randint(0, 255),
+            random.randint(0, 255),
+            random.randint(0, 255)
+            ))
+        turtle.begin_fill()
+        for i in range(2):
+            turtle.fd(self.width)
+            turtle.right(90)
+            turtle.fd(self.height)
+            turtle.right(90)
+        turtle.end_fill()
+
+    @staticmethod
+    def draw(rectangles, squares):
+        for rect in rectangles:
+            rect.turtle_rect()
+        for square in squares:
+            square.turtle_rect()
