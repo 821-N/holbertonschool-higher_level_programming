@@ -10,7 +10,6 @@ import json
 class Base:
     """ Base class """
 
-
     __nb_objects = 0
 
     @classmethod
@@ -32,7 +31,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ literally just ... """
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -61,14 +60,16 @@ class Base:
         """ load objs from json file """
         try:
             with open(cls.__name__ + ".json", "r") as f:
-                return [cls.create(**x) for x in cls.from_json_string(f.read())]
+                return [
+                    cls.create(**x) for x in cls.from_json_string(f.read())
+                ]
         except OSError:
             return []
-    
+
     def __init__(self, id=None):
         """ Init function """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
-            self.__nb_objects += 1
-            self.id = self.__nb_objects
+            self.__class__.__nb_objects += 1
+            self.id = self.__class__.__nb_objects

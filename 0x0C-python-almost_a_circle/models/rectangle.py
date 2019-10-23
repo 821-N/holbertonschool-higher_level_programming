@@ -30,7 +30,8 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        return "[Rectangle] (%d) %d/%d - %d/%d" % (self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] (%d) %d/%d - %d/%d" % (
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """ There must be a better way to do this """
@@ -58,7 +59,10 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ get dictionary representation """
-        return {"id": self.id, "x": self.x, "y": self.y, "width": self.width, "height": self.height}
+        return {
+            "id": self.id, "x": self.x, "y": self.y,
+            "width": self.width, "height": self.height
+        }
             
     # after this is just getters and setters so don't even bother
     
