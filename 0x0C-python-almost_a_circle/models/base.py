@@ -8,7 +8,7 @@ import json
 
 
 class Base:
-    """ Base class """
+    """eeeee"""
 
     __nb_objects = 0
 
