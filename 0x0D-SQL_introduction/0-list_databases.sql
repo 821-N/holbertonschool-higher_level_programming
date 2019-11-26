@@ -1,2 +1,2 @@
 -- hey
-show databases;
+SHOW DATABASES;
