@@ -16,8 +16,10 @@ if __name__ == "__main__":
         db=argv[3]
     )
     cur = conn.cursor()
-    name = argv[4]
-    cur.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC", (name,))
+    cur.execute(
+        "SELECT * FROM states WHERE name=%s ORDER BY id ASC".format(),
+        (argv[4],)
+    )
     for row in cur.fetchall():
         print(row)
     cur.close()
