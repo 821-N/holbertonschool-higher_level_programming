@@ -2,8 +2,10 @@
 import MySQLdb
 from sys import argv
 
-""" list states """
+# ligma balls
 
+if __name__ != "__main__":
+    return
 conn = MySQLdb.connect(
     host="localhost",
     user=argv[1],
