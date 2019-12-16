@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+
+""" list states """
+
+
 import MySQLdb
 from sys import argv
 
