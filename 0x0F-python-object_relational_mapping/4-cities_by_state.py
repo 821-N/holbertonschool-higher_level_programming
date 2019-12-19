@@ -20,8 +20,8 @@ if __name__ == "__main__":
     SELECT city.id, city.name, state.name
     FROM cities city
     LEFT JOIN states state
-    ON state_id = state.id
-    ORDER BY id ASC
+    ON city.state_id = state.id
+    ORDER BY city.id ASC
     """)
     for row in cur.fetchall():
         print(row)
