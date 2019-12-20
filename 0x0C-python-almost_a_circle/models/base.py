@@ -77,6 +77,7 @@ class Base:
             self.id = self.__class__.__nb_objects
 
     def turtle_rect(self):
+        """ draw rect with turtle """
         random.seed(self.id)
         turtle.setworldcoordinates(0,0,200,200)
         turtle.speed(0)
@@ -100,6 +101,7 @@ class Base:
 
     @staticmethod
     def draw(rectangles, squares):
+        """ draw many """
         for rect in rectangles:
             rect.turtle_rect()
         for square in squares:

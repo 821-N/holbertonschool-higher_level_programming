@@ -30,6 +30,7 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
+        """ str """
         return "[Rectangle] (%d) %d/%d - %d/%d" % (
             self.id, self.x, self.y, self.width, self.height)
 
