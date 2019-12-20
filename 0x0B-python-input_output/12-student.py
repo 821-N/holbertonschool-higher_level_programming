@@ -18,7 +18,8 @@ class Student:
         if type(attrs) == list:
             l = {}
             for name in attrs:
-                l[name] = getattr(self, name)
+                if hasattr(self, name):
+                    l[name] = getattr(self, name)
             return l
         else:
             return self.__dict__
