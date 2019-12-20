@@ -16,9 +16,9 @@ class Student:
     def to_json(self, attrs=None):
         """ to dict """
         if type(attrs) == list:
-            l = []
+            l = {}
             for name in attrs:
-                l += getattr(self, name)
-                return l
+                l[name] = getattr(self, name)
+            return l
         else:
             return self.__dict__
