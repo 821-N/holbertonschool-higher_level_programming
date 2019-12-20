@@ -64,9 +64,9 @@ class Rectangle(Base):
             "id": self.id, "x": self.x, "y": self.y,
             "width": self.width, "height": self.height
         }
-            
+
     # after this is just getters and setters so don't even bother
-    
+
     @property
     def width(self):
         """ one """
@@ -110,4 +110,3 @@ class Rectangle(Base):
         """ guy """
         self.check_pos("y", y)
         self.__y = y
-
