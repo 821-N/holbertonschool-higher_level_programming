@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" get all states """
+"""
+    get all states
+"""
 
 import sys
 from model_state import Base, State
@@ -25,3 +27,4 @@ if __name__ == "__main__":
 	print(str(w.id) + ": " + str(w.name))
     else:
         print("Nothing")
+    session.close()
