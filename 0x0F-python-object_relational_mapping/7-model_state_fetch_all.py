@@ -20,5 +20,5 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    for row in session.query(State).order_by(State.id).all():
+    for row in session.query(State).order_by(State.id):
         print(str(row.id) + ": " + str(row.name))
