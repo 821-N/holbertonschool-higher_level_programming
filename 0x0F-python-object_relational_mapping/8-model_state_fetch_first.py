@@ -20,7 +20,8 @@ if __name__ == "__main__":
     Session.configure(bind=engine)
     session = Session()
 
-    for row in session.query(State).order_by(State.id)[:1]:
-	print(str(row.id) + ": " + str(row.name))
+    w = session.query(State).order_by(State.id).first();
+    if w:
+	print(str(w.id) + ": " + str(w.name))
     else:
         print("Nothing")
