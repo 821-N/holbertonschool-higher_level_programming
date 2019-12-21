@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    list all cities and their states
+    list all cities in a state'
 """
 
 
@@ -17,13 +17,13 @@ if __name__ == "__main__":
     )
     cur = conn.cursor()
     cur.execute("""
-    SELECT city.id, city.name, state.name
+    SELECT city.name
     FROM cities city
     LEFT JOIN states state
     ON city.state_id = state.id
+    WHERE state.name = %s
     ORDER BY city.id ASC
-    """)
-    for row in cur.fetchall():
-        print(row)
+    """, (argv[4],))
+    print(", ".join([x[0] for x in cur.fetchall()]))
     cur.close()
     conn.close()
