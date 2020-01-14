@@ -6,10 +6,10 @@
 
 import urllib.request
 
-
-with urllib.request.urlopen("https://intranet.hbtn.io/status") as res:
-    data = res.read()
-    print("Body response:")
-    print("    - type: " + str(type(data)))
-    print("    - content: " + str(data))
-    print("    - utf8 content: " + data.decode("utf-8"))
+if __name__ == "__main__":
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as res:
+        data = res.read()
+        print("Body response:")
+        print("    - type: " + str(type(data)))
+        print("    - content: " + str(data))
+        print("    - utf8 content: " + data.decode("utf-8"))
