@@ -1,9 +1,12 @@
 #!/usr/bin/node
 /* eslint-disable */
+function checkWidth(w) {
+	return Math.sign(parseInt(w)) === 1;
+}
 
 class Rectangle {
 	constructor(w, h) {
-		if (w<=0 || h<=0)
+		if (!(checkWidth(w) && checkWidth(h)))
 			return;
 		this.width = w;
 		this.height = h;
