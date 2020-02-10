@@ -2,5 +2,7 @@
 /* eslint-disable */
 
 exports.esrever = function(list) {
-	return list['re\x78erse']();
+	var out = [];
+	list.forEach(x => out.unshift(x));
+	return out;
 };
