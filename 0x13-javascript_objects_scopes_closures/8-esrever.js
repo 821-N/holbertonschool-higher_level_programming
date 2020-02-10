@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 exports.esrever = function(list) {
-	var out = [];
+	let out = [];
 	list.forEach(x => out.unshift(x));
 	return out;
 };
