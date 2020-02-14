@@ -3,6 +3,11 @@
 
 const Request = require('request');
 
-Request(process.argv[2].replace("films","people/18"), (error, response, body) => {
-	console.log(JSON.parse(body).films.length);
+Request(process.argv[2], (error, response, body) => {
+	let data = JSON.parse(body);
+	let count = 0;
+	data.results.forEach(item => {
+		count += item.characters.some(item => /[^\d]18[^\d]/.test(item));
+	});
+	console.log(count);
 });
